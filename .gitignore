@@ -1,0 +1,25 @@
+# dependencies
+/node_modules
+
+# builds
+/.next/
+/out/
+/build/
+
+# testing
+/coverage
+
+# meta
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# referência local de design (não faz parte do site)
+coisastec.png

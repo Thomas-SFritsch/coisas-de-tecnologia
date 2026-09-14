@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-slate-800 antialiased dark:bg-navy dark:text-slate-200;
+  }
+
+  ::selection {
+    @apply bg-violet-500/30;
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-gradient px-5 py-2.5 font-heading text-sm font-bold text-white ring-offset-white transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 active:brightness-95 dark:ring-offset-navy;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-2.5 font-heading text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600 dark:border-slate-700 dark:bg-deep dark:text-slate-200 dark:hover:border-indigo-500 dark:hover:text-indigo-300;
+  }
+
+  .tag {
+    @apply font-mono text-[10px] font-bold uppercase tracking-[0.18em];
+  }
+
+  .chip {
+    @apply tag inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-2.5 py-1 text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white shadow-soft dark:border-slate-800 dark:bg-deep;
+  }
+
+  .surface-soft {
+    @apply bg-slate-50 dark:bg-deep;
+  }
+
+  .title {
+    @apply font-heading font-extrabold tracking-tight text-slate-900 dark:text-white;
+  }
+}
