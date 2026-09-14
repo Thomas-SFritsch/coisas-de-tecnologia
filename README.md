@@ -9,50 +9,6 @@ Site de ofertas/promoções que exibe produtos em promoção e redireciona os vi
 - **Tailwind CSS 3**
 - **TypeScript**
 
-## Como rodar localmente
-
-```bash
-npm install
-npm run dev
-```
-
-Acesse http://localhost:3000
-
-Build de produção:
-
-```bash
-npm run build
-npm run start
-```
-
-## Como adicionar/editar produtos
-
-Edite o arquivo `src/data/produtos.ts`. Cada produto segue esta estrutura:
-
-```ts
-{
-  id: "7",
-  nome: "Nome do produto",
-  imagem: "https://url-da-imagem",
-  precoAtual: 199.99,
-  precoOriginal: 299.99, // opcional — deixe sem o campo se não houver desconto
-  loja: "Amazon", // ou "Mercado Livre"
-  categoria: "Eletrônicos", // use uma das categorias do array `categorias`
-  linkAfiliado: "https://amazon.com.br/dp/CODIGO?tag=SEU-AFILIADO-20",
-}
-```
-
-### Trocando pelo seu link de afiliado
-
-1. Substitua `SEU-AFILIADO-20` pelo seu código da Amazon Associates.
-2. Substitua `SEU-AFILIADO-ML` pelo seu link oficial do programa de afiliados do Mercado Livre.
-3. Use a URL real do produto em vez de `mercadolivre.com/produto`.
-
-> Dica: categorias novas exigem a adição no array `categorias` no mesmo arquivo. O slug da página é gerado automaticamente a partir do nome.
-
-## Evento de clique
-
-O componente `src/components/ProductCard.tsx` já registra cada clique no botão "Ver oferta" via `console.log`. Para integrar Google Analytics, basta substituir o comentário `// Integração futura` dentro do `handleClick`.
 
 ## Estrutura de pastas
 
@@ -88,11 +44,3 @@ src/
 └── lib/
     ├── format.ts                   # Formatação de preço em BRL
     └── categorias.ts               # Geração de slugs de categoria
-```
-
-## Identidade visual
-
-- **Logotipo**: "COISAS DE / TECNOLOGIA" em Montserrat, com símbolo geométrico C/T azul/violeta.
-- **Favicon**: `src/app/icon.svg` — símbolo sobre quadrado #0B1120 arredondado.
-- **Paleta**: Azul técnico `#2563EB`, índigo `#4F46E5`, violeta `#8B5CF6`, azul-marinho `#0F172A`, grafite `#0B1120`, cinzas `#334155/#64748B/#E2E8F0`, branco.
-- **Dark Mode**: ativado por switch (persistido em `localStorage`), sem flash inicial via script no `<head>`.
